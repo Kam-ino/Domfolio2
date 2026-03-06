@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7efd3"/>
+  <rect x="42" y="42" width="1116" height="546" rx="24" fill="#eed7a1" stroke="#4c6c47" stroke-width="8"/>
+  <text x="90" y="220" font-size="64" font-family="Georgia, serif" fill="#2d2a26">Dominic Santiago Guevarra</text>
+  <text x="90" y="310" font-size="38" font-family="Arial, sans-serif" fill="#4c6c47">Full Stack Developer · React · Node.js · Automation</text>
+  <text x="90" y="400" font-size="28" font-family="Arial, sans-serif" fill="#5d5146">Medieval-inspired developer portfolio</text>
+</svg>

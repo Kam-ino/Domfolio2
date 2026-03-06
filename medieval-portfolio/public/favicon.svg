@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Shield icon">
+  <path fill="#4c6c47" d="M32 4 10 12v17c0 16 8.2 24.8 22 31 13.8-6.2 22-15 22-31V12L32 4Z"/>
+  <path fill="#eed7a1" d="M32 12 18 17v12c0 10.7 4.9 17 14 21.9 9.1-4.9 14-11.2 14-21.9V17L32 12Z"/>
+  <path fill="#cd8b62" d="M30 22h4v20h-4zM22 30h20v4H22z"/>
+</svg>
