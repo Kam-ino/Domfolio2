@@ -16,31 +16,31 @@ const navItems = [
 const pics = [
   { id: 1, content: (
             <div className="portrait">
-                <img src="./public/Poster (1).png" alt="Me 1"/>
+                <img src="/Poster (1).png" alt="Me 1"/>
             </div>
         ),
   },
   { id: 2, content: (
             <div className="portrait">
-                <img src="./public/Poster (2).png" alt="Me 2"/>
+                <img src="/Poster (2).png" alt="Me 2"/>
             </div>
         ),
   },
   { id: 3, content: (
             <div className="portrait">
-                <img src="./public/Poster (3).png" alt="Me 3"/>
+                <img src="/Poster (3).png" alt="Me 3"/>
             </div>
         ),
   },
   { id: 4, content: (
             <div className="portrait">
-                <img src="./public/Poster (4).png" alt="Me 4"/>
+                <img src="/Poster (4).png" alt="Me 4"/>
             </div>
         ),
   },
   { id: 5, content: (
             <div className="portrait">
-                <img src="./public/Poster (5).png" alt="Me 5"/>
+                <img src="/Poster (5).png" alt="Me 5"/>
             </div>
         ),
   },
@@ -48,6 +48,7 @@ const pics = [
 
 function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'parchment');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -267,6 +268,7 @@ function App() {
                 action={`mailto:${siteConfig.email}`}
                 method="post"
                 encType="text/plain"
+                onSubmit={() => setIsSubmitting(true)}
               >
                 <label htmlFor="name">Name</label>
                 <input id="name" name="name" type="text" placeholder="Your name" required />
@@ -283,7 +285,7 @@ function App() {
                   required
                 />
 
-                <button className="button primary" type="submit">
+                <button className="button primary" type="submit" disabled={isSubmitting}>
                   Send Message
                 </button>
               </form>
@@ -292,7 +294,7 @@ function App() {
         </main>
 
         <footer className="site-footer">
-          <p>Built with React and handcrafted CSS.</p>
+          <p>Built with React and CSS.</p>
           <p>{siteConfig.name} · Full Stack Developer</p>
         </footer>
       </div>

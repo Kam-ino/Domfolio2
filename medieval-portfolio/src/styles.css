@@ -40,9 +40,17 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: var(--text);
-  background-image: url('../parchment-texture.png');
+  background-image: var(--background-image, url('../parchment-texture.png'));
   background-size: 100%;
   line-height: 1.6;
+}
+
+:root {
+  --background-image: url('../parchment-texture.png');
+}
+
+:root[data-theme='moonlit'] {
+  --background-image: url('../parchment-moon.png');
 }
 
 body::before {
@@ -104,8 +112,8 @@ ul {
 }
 
 .app-shell {
-  width: min(100%, calc(var(--max-width) + 2rem));
-  margin: 0 auto;
+  width: min(100%, calc(var(--max-width) + 18vw));
+  margin: 0 10vw;
   padding: 1rem;
 }
 
@@ -622,8 +630,8 @@ ul {
   min-height: 100%;
   padding: 1.2rem;
   border-radius: 18px;
-  border: 2px solid var(--quest-accent);
-  background: linear-gradient(180deg, var(--surface-strong), rgba(255, 250, 236, 0.9));
+  border: var(--quest-border, 2px solid var(--quest-accent));
+  background: linear-gradient(180deg, var(--surface-strong), rgba(255, 250, 236, 1));
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.24);
   cursor: pointer;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
@@ -800,4 +808,38 @@ ul {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.contact-form .button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.contact-form input:disabled,
+.contact-form textarea:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.form-status {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.form-status.success {
+  color: #4c6c47;
+}
+
+.form-status.error {
+  color: #a13d35;
+}
+
+body.moonlit .form-status.success {
+  color: #b7d8ff;
+}
+
+body.moonlit .form-status.error {
+  color: #ffb3b3;
 }
